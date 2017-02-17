@@ -1,0 +1,18 @@
+
+alias sl='ls'
+alias grep='grep -n --color'
+alias clamscan='clamscan -r -o'
+alias xopen=xdg-open
+eval "$(thefuck --alias fk)"
+
+alias rtorrent-pub='rtorrent -n -o import=~/.rtorrent-pub.rc'
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
+# 18-349
+repo_dir=/home/cw/Downloads/software_setup/18349
+export PATH="$PATH:$repo_dir/gcc-arm-none-eabi-4_9-2015q2/bin"
+export PATH="$PATH:$repo_dir/ftditerm"
+export PATH="$PATH:/home/cw/Git/18349-f16-tbrunner"
+
