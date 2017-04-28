@@ -1,6 +1,9 @@
 " ============================================================================
-"  vim-plug
+"  Plugins
 " ============================================================================
+
+" vim-plug
+let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
 "Plug 'scrooloose/syntastic'
@@ -9,7 +12,9 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 call plug#end()
 
-let g:plug_window = 'tabe'
+" NERD Commenter
+let g:NERDSpaceDelims = 1
+let g:NERDTrimTrailingWhitespace = 1
 
 " ============================================================================
 "  Appearance
