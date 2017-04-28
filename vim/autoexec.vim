@@ -1,4 +1,3 @@
-
 """" Appearance
 syntax on
 colors desert
@@ -19,6 +18,8 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 
 
 """" Controls
+let mapleader=","
+
 set backspace=indent,eol,start " backspace over everything in insert mode
 set incsearch
 
