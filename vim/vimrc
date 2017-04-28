@@ -9,6 +9,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 call plug#end()
 
+let g:plug_window = 'tabe'
 
 " ============================================================================
 "  Appearance
