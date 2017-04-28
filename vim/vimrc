@@ -6,11 +6,19 @@
 let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
-"Plug 'scrooloose/syntastic'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+Plug 'bling/vim-airline'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/syntastic'
 call plug#end()
+
+" EasyMotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
+nmap s <Plug>(easymotion-overwin-f2)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " NERD Commenter
 let g:NERDSpaceDelims = 1
