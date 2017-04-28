@@ -1,8 +1,46 @@
+" ============================================================================
+"  vim-plug
+" ============================================================================
+
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/syntastic'
-"Plug 'bling/vim-airline'
-"Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/syntastic'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 call plug#end()
 
-source ~/git/cwee-config-files/vim/autoexec.vim
+
+" ============================================================================
+"  Appearance
+" ============================================================================
+
+syntax on
+colors desert
+
+set ignorecase
+set nowrap
+set number
+set ruler
+set showcmd
+set smartcase
+
+" 78 char limit
+highlight OverLength ctermbg=red ctermfg=white guibg=#295929
+match OverLength /\%79v.\+/
+
+" Signature files for SML
+au BufRead,BufNewFile *.sig setlocal filetype=sml
+
+
+" ============================================================================
+"  Controls
+" ============================================================================
+
+let mapleader=","
+
+set backspace=indent,eol,start " backspace over everything in insert mode
+set incsearch
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
