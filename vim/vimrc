@@ -10,6 +10,7 @@ Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
+Plug 'tomasr/molokai'
 " Plug 'scrooloose/syntastic'
 call plug#end()
 
@@ -24,13 +25,18 @@ map <Leader>k <Plug>(easymotion-k)
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
 " ============================================================================
 "  Appearance
 " ============================================================================
 
+set t_Co=256
 syntax on
-colors desert
+colors molokai
 
+set cursorline
 set ignorecase
 set nowrap
 set number
@@ -39,12 +45,11 @@ set showcmd
 set smartcase
 
 " 78 char limit
-highlight OverLength ctermbg=red ctermfg=white guibg=#295929
-match OverLength /\%79v.\+/
+set colorcolumn=79
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Signature files for SML
 au BufRead,BufNewFile *.sig setlocal filetype=sml
-
 
 " ============================================================================
 "  Controls
