@@ -10,6 +10,6 @@ def FlagsForFile(fpath, **kwargs):
         flags = ['-x', 'c', '-std=c11', '-Wall', '-Wextra', '-Werror']
         return {'flags': flags}
     
-    elif ext in {'.cpp', '.h'}:
+    elif ext in {'.cpp', '.h', '.cc'}:
         flags = ['-x', 'c++', '-std=c++11', '-Wall', '-Wextra', '-Werror']
         return {'flags': flags}
