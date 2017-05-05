@@ -11,15 +11,15 @@ Plug 'bling/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tomasr/molokai'
-" Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-sleuth'
 call plug#end()
 
 " EasyMotion
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 nmap s <Plug>(easymotion-overwin-f2)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" map <Leader>j <Plug>(easymotion-j)
+" map <Leader>k <Plug>(easymotion-k)
 
 " NERD Commenter
 let g:NERDSpaceDelims = 1
@@ -27,6 +27,7 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " ============================================================================
 "  Appearance
@@ -59,7 +60,3 @@ let mapleader=","
 
 set backspace=indent,eol,start " backspace over everything in insert mode
 set incsearch
-
-set tabstop=4
-set shiftwidth=4
-set expandtab
