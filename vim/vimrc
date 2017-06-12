@@ -8,18 +8,20 @@ let g:plug_window = 'tabe'
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 " EasyMotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
-nmap s <Plug>(easymotion-overwin-f2)
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
+" nmap w <Plug>(easymotion-w)
+" nmap b <Plug>(easymotion-b)
 
 " NERD Commenter
 let g:NERDSpaceDelims = 1
