@@ -43,6 +43,7 @@ syntax on
 colors molokai
 
 set cursorline
+set hlsearch
 set ignorecase
 set nowrap
 set number
