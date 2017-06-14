@@ -17,6 +17,9 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 call plug#end()
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+
 " EasyMotion
 " let g:EasyMotion_do_mapping = 0 " Disable default mappings
 let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
