@@ -66,3 +66,11 @@ let mapleader=","
 
 set backspace=indent,eol,start " backspace over everything in insert mode
 set incsearch
+
+" Trim trailing whitespace: https://vi.stackexchange.com/a/456
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+command! TrimWhitespace call TrimWhitespace()
