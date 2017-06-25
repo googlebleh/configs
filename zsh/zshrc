@@ -5,7 +5,7 @@ alias clamscan='clamscan -r -o'
 alias xopen=xdg-open
 eval "$(thefuck --alias fk)"
 
-alias rtorrent-pub='rtorrent -n -o import=~/.rtorrent-pub.rc'
+alias rt-private='rtorrent -n -o import=~/.rt-private.rc'
 
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
