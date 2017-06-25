@@ -1,2 +1,2 @@
-# cwee-config-files
+# cwee-configs
 My config files for various applications
