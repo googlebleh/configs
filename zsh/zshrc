@@ -4,6 +4,7 @@ alias sl='ls'
 alias grep='grep -n --color'
 alias clamscan='clamscan -r -o'
 alias xopen=xdg-open
+alias tmux='TERM=xterm-256color tmux'
 eval "$(thefuck --alias fk)"
 
 alias rt-private='rtorrent -n -o import=~/.rt-private.rc'
