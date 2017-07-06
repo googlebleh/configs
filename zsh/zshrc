@@ -1,3 +1,5 @@
+source ~/.oh-my-zshrc
+
 alias sl='ls'
 alias grep='grep -n --color'
 alias clamscan='clamscan -r -o'
