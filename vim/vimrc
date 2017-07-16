@@ -46,7 +46,7 @@ set cursorline
 set hlsearch
 set ignorecase
 set nowrap
-set number
+set number relativenumber " hybrid line numbers
 set ruler
 set showcmd
 set smartcase
