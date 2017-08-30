@@ -64,6 +64,7 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 
 let mapleader=","
 
+set hidden
 set backspace=indent,eol,start " backspace over everything in insert mode
 set incsearch
 
