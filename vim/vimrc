@@ -10,6 +10,7 @@ Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
+Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
@@ -43,6 +44,7 @@ syntax on
 colors molokai
 
 set cursorline
+set hidden
 set hlsearch
 set ignorecase
 set nolist wrap linebreak breakat&vim " line wrap between words
