@@ -49,7 +49,6 @@ syntax on
 colors molokai
 
 set cursorline
-set hidden
 set hlsearch
 set ignorecase
 set nolist wrap linebreak breakat&vim " line wrap between words
