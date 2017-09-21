@@ -17,6 +17,10 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+
+" fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Airline
