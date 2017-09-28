@@ -35,6 +35,7 @@ let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 " nmap b <Plug>(easymotion-b)
 
 " NERD Commenter
+let g:NERDAltDelims_c = 1
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
