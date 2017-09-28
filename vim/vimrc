@@ -19,7 +19,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 
 " fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install --no-fish' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
