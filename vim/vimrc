@@ -90,3 +90,5 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 command! TrimWhitespace call TrimWhitespace()
+
+set tags=tags;/ " search parent dirs for ctags file
