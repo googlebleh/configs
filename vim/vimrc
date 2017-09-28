@@ -62,6 +62,7 @@ set number relativenumber " hybrid line numbers
 set ruler
 set showcmd
 set smartcase
+set tabstop=4
 
 " 78 char limit
 set colorcolumn=79
