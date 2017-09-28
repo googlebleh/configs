@@ -6,6 +6,7 @@
 let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
@@ -36,6 +37,11 @@ let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 " NERD Commenter
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<c-Space>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
