@@ -8,6 +8,7 @@ let g:plug_window = 'tabe'
 call plug#begin('~/.vim/plugged')
 Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
+Plug 'bronson/vim-visual-star-search'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
