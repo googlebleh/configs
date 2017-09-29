@@ -89,4 +89,5 @@ fun! TrimWhitespace()
 endfun
 command! TrimWhitespace call TrimWhitespace()
 
+set autochdir
 set tags=tags;/ " search parent dirs for ctags file
