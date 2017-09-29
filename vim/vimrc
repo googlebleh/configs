@@ -78,9 +78,11 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 
 let mapleader=","
 
-set hidden
+set autochdir
 set backspace=indent,eol,start " backspace over everything in insert mode
+set hidden
 set incsearch
+set tags=tags;/ " search parent dirs for ctags file
 
 " Trim trailing whitespace: https://vi.stackexchange.com/a/456
 fun! TrimWhitespace()
@@ -89,6 +91,3 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 command! TrimWhitespace call TrimWhitespace()
-
-set autochdir
-set tags=tags;/ " search parent dirs for ctags file
