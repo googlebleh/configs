@@ -19,6 +19,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'yuttie/comfortable-motion.vim'
 
 " fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install --no-fish' }
