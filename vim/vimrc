@@ -39,8 +39,8 @@ let g:NERDTrimTrailingWhitespace = 1
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-Space>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-Space>"
+let g:UltiSnipsJumpBackwardTrigger="<c-Left>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
