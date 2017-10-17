@@ -6,13 +6,19 @@
 let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+let g:fzf_hook = 'yes | ./install --no-fish'
+let g:ycm_hook = './install.py --clang-completer'
+
+Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+Plug 'Valloric/youcompleteme', { 'do': g:ycm_hook }
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
@@ -20,10 +26,6 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'yuttie/comfortable-motion.vim'
-
-" fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install --no-fish' }
-Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Airline
