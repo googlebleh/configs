@@ -80,6 +80,7 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 " ============================================================================
 
 let mapleader=","
+noremap \ ,
 
 set autochdir
 set backspace=indent,eol,start " backspace over everything in insert mode
