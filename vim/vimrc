@@ -16,15 +16,18 @@ Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
+" Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
