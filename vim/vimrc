@@ -38,7 +38,6 @@ let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 let g:NERDAltDelims_c = 1
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
-imap <C-i> <plug>NERDCommenterInsert
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-Space>"
