@@ -42,6 +42,10 @@ let g:NERDAltDelims_c = 1
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+" Startify
+let g:startify_files_number = 20
+let g:startify_relative_path = 1
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<c-Space>"
 let g:UltiSnipsJumpForwardTrigger = "<c-Space>"
