@@ -14,7 +14,6 @@ Plug 'SirVer/ultisnips'
 Plug 'Valloric/youcompleteme', { 'do': g:ycm_hook }
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jiangmiao/auto-pairs'
