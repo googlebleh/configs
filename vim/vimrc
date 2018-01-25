@@ -19,10 +19,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
-" Plug 'maralla/completor.vim'
 Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
@@ -46,9 +44,9 @@ let g:startify_files_number = 20
 let g:startify_relative_path = 1
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<c-Space>"
+let g:UltiSnipsExpandTrigger = "<c-Space>"
 let g:UltiSnipsJumpForwardTrigger = "<c-Space>"
-let g:UltiSnipsJumpBackwardTrigger="<c-Left>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-Left>"
 
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
