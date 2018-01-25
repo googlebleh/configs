@@ -9,22 +9,25 @@ call plug#begin('~/.vim/plugged')
 let g:fzf_hook = 'yes | ./install --no-fish'
 let g:ycm_hook = './install.py --clang-completer'
 
-Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-Plug 'Valloric/youcompleteme', { 'do': g:ycm_hook }
+" light plugins
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
-Plug 'easymotion/vim-easymotion'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf.vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
-Plug 'mhinz/vim-startify'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+" medium plugins
+Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
+Plug 'tomasr/molokai'
+" heavy plugins
+Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+Plug 'Valloric/youcompleteme', { 'do': g:ycm_hook }
+Plug 'easymotion/vim-easymotion'
+Plug 'mhinz/vim-startify'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
