@@ -1,5 +1,8 @@
 source ~/.oh-my-zshrc
 
+# for use when splitting files
+export FAT32_NBYTES=4294967295
+
 alias sl='ls'
 alias grep='grep -n --color'
 alias clamscan='clamscan -r -o'
