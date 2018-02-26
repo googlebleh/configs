@@ -6,7 +6,7 @@
 let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
-let g:fzf_hook = 'yes | ./install --no-fish'
+let fzf_hook = 'yes | ./install --no-fish'
 
 " light plugins
 Plug 'bling/vim-airline'
@@ -19,7 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 " medium plugins
 Plug 'junegunn/fzf.vim'
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
 Plug 'tomasr/molokai'
 " heavy plugins
 Plug 'mhinz/vim-startify'
@@ -43,7 +43,6 @@ let g:startify_relative_path = 1
 "  Appearance
 " ============================================================================
 
-" set t_Co=256 " this may no longer be necessary for tmux
 syntax on
 colors molokai
 
