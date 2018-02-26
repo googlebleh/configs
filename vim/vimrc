@@ -7,7 +7,6 @@ let g:plug_window = 'tabe'
 
 call plug#begin('~/.vim/plugged')
 let g:fzf_hook = 'yes | ./install --no-fish'
-let g:ycm_hook = './install.py --clang-completer'
 
 " light plugins
 Plug 'bling/vim-airline'
@@ -23,19 +22,12 @@ Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': g:fzf_hook }
 Plug 'tomasr/molokai'
 " heavy plugins
-Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-Plug 'Valloric/youcompleteme', { 'do': g:ycm_hook }
-Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-startify'
 Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
-
-" EasyMotion
-let g:EasyMotion_smartcase = 1 " Turn on case insensitive feature
 
 " NERD Commenter
 let g:NERDAltDelims_c = 1
@@ -46,16 +38,6 @@ autocmd FileType python :let g:NERDSpaceDelims = 0
 " Startify
 let g:startify_files_number = 20
 let g:startify_relative_path = 1
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger = "<c-Space>"
-let g:UltiSnipsJumpForwardTrigger = "<c-Space>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-Left>"
-
-" YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_show_diagnostics_ui = 0
 
 " ============================================================================
 "  Appearance
