@@ -77,6 +77,12 @@ set backspace=indent,eol,start " backspace over everything in insert mode
 set hidden
 set incsearch
 set tags=tags;/ " search parent dirs for ctags file
+set wildmenu " Display all matching files when we tab complete
+
+let usrdict_fpath = "/usr/share/dict/words"
+if filereadable(usrdict_fpath)
+  set dictionary+=usrdict_fpath
+endif
 
 " Trim trailing whitespace: https://vi.stackexchange.com/a/456
 fun! TrimWhitespace()
