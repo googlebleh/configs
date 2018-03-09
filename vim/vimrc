@@ -31,7 +31,7 @@ let g:airline#extensions#tabline#enabled = 1
 
 " NERD Commenter
 let g:NERDAltDelims_c = 1
-let g:NERDAltDelims_py = 1 " only one space after the '#'
+let g:NERDAltDelims_python = 1 " only one space after the '#'
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 
