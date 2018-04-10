@@ -20,3 +20,5 @@
 	compression = 0
 [credential]
 	helper = cache
+[commit]
+	verbose = true
