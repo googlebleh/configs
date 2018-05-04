@@ -2,6 +2,9 @@
 "  Plugins
 " ============================================================================
 
+filetype plugin indent on
+runtime ftplugin/man.vim
+
 " vim-plug
 let g:plug_window = 'tabe'
 
@@ -66,7 +69,6 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 let mapleader=","
 noremap \ ,
 
-set autochdir
 set backspace=indent,eol,start " backspace over everything in insert mode
 set hidden
 set incsearch
