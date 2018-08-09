@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+NoDisplay=true
+Exec=/home/cwee/tools/show_folder.sh %f
+Name=Open Containing Folder
+Comment=Custom definition for show_folder.sh
+Icon=system-file-manager
