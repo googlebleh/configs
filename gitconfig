@@ -1,6 +1,6 @@
 [user]
 	name = Colin Wee
-	email = 2gbleh@gmail.com
+	useConfigOnly = true
 
 [alias]
     lg = !"git lg2"
