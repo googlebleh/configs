@@ -65,7 +65,13 @@ set smartcase
 " 78 char limit
 set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" place after character limit
 set background=dark
+
+set spell spelllang=en_us
+" place after setting background
+highlight SpellBad cterm=underline
 
 " Signature files for SML
 au BufRead,BufNewFile *.sig setlocal filetype=sml
