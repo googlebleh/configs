@@ -5,9 +5,6 @@
 filetype plugin indent on
 runtime ftplugin/man.vim
 
-" vim-plug
-let g:plug_window = 'tabe'
-
 call plug#begin('~/.vim/plugged')
 let fzf_hook = 'yes | ./install --no-fish'
 
