@@ -77,9 +77,6 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 "  Controls
 " ============================================================================
 
-let mapleader=","
-noremap \ ,
-
 set backspace=indent,eol,start " backspace over everything in insert mode
 set hidden
 set incsearch
