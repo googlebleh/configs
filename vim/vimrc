@@ -26,7 +26,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tomasr/molokai'
 " heavy plugins
 Plug 'mhinz/vim-startify'
-" Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
 
 " Airline
