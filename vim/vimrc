@@ -65,7 +65,7 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 " place after character limit
 set background=dark
 
-set spell spelllang=en_us
+set spelllang=en_us
 " place after setting background
 highlight SpellBad cterm=underline
 
