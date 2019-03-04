@@ -2,7 +2,9 @@
 "  Plugins
 " ============================================================================
 
-filetype plugin indent on
+if has('autocmd')
+  filetype plugin indent on
+endif
 runtime ftplugin/man.vim
 
 call plug#begin('~/.vim/plugged')
@@ -39,7 +41,9 @@ let g:startify_relative_path = 1
 "  Appearance
 " ============================================================================
 
-syntax enable
+if has('syntax') && !exists('g:syntax_on')
+  syntax enable
+endif
 
 " set Vim-specific sequences for RGB colors
 " https://github.com/vim/vim/issues/993#issuecomment-255651605
