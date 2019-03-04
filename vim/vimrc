@@ -78,6 +78,7 @@ au BufRead,BufNewFile *.sig setlocal filetype=sml
 
 set backspace=indent,eol,start " backspace over everything in insert mode
 set hidden
+set history=1000
 set incsearch
 set noesckeys " https://stackoverflow.com/a/2158610/6466133
 set tags=tags;/ " search parent dirs for ctags file
