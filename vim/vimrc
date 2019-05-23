@@ -45,12 +45,7 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
-" set Vim-specific sequences for RGB colors
-" https://github.com/vim/vim/issues/993#issuecomment-255651605
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colors base16-default-dark
-set termguicolors
+colorscheme jellybeans
 
 set cursorline
 set hlsearch
@@ -67,7 +62,7 @@ set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " place after character limit
-set background=dark
+" set background=dark
 
 set spelllang=en_us
 " place after setting background
