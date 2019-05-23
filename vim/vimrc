@@ -10,10 +10,14 @@ runtime ftplugin/man.vim
 call plug#begin('~/.vim/plugged')
 let fzf_hook = 'yes | ./install --no-fish'
 
+" colorschemes
+" Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
+" Plug 'tomasr/molokai'
+
 " light plugins
 Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
-Plug 'chriskempson/base16-vim'
 Plug 'godlygeek/tabular'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'jiangmiao/auto-pairs'
@@ -22,10 +26,11 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+
 " medium plugins
 Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
-Plug 'tomasr/molokai'
+
 " heavy plugins
 Plug 'mhinz/vim-startify'
 call plug#end()
