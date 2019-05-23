@@ -71,7 +71,9 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 set spelllang=en_us
 " place after setting background
-highlight SpellBad cterm=underline
+highlight SpellBad cterm=underline ctermbg=0
+highlight SpellCap cterm=underline ctermbg=0
+highlight SpellLocal cterm=underline ctermbg=0
 
 " Signature files for SML
 au BufRead,BufNewFile *.sig setlocal filetype=sml
