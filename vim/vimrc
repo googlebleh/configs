@@ -39,6 +39,7 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 
 " Startify
+let g:startify_change_to_dir = 0
 let g:startify_files_number = 20
 let g:startify_relative_path = 1
 
