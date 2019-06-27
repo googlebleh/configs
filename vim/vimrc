@@ -95,6 +95,8 @@ if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
+" todo: add persistent undo https://stackoverflow.com/a/22676189/6466133
+
 let usrdict_fpath = "/usr/share/dict/words"
 if filereadable(usrdict_fpath)
   set dictionary+=usrdict_fpath
