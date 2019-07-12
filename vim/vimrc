@@ -1,6 +1,4 @@
-" ============================================================================
-"  Plugins
-" ============================================================================
+" Plugins ===========================================================
 
 if has('autocmd')
   filetype plugin indent on
@@ -43,9 +41,7 @@ let g:startify_change_to_dir = 0
 let g:startify_files_number = 20
 let g:startify_relative_path = 1
 
-" ============================================================================
-"  Appearance
-" ============================================================================
+" Appearance ========================================================
 
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -79,20 +75,19 @@ highlight SpellLocal cterm=underline ctermbg=0
 " Signature files for SML
 au BufRead,BufNewFile *.sig setlocal filetype=sml
 
-" ============================================================================
-"  Controls
-" ============================================================================
+" Controls ==========================================================
 
-set backspace=indent,eol,start " backspace over everything in insert mode
+set backspace=indent,eol,start " bksp over everything in insert mode
 set hidden
 set history=1000
 set incsearch
 set noesckeys " https://stackoverflow.com/a/2158610/6466133
 set tags=tags;/ " search parent dirs for ctags file
-set wildmenu " Display all matching files when we tab complete
+set wildmenu
 
 if v:version > 703 || v:version == 703 && has("patch541")
-  set formatoptions+=j " Delete comment character when joining commented lines
+  " Delete comment character when joining commented lines
+  set formatoptions+=j
 endif
 
 " todo: add persistent undo https://stackoverflow.com/a/22676189/6466133
@@ -102,7 +97,8 @@ if filereadable(usrdict_fpath)
   set dictionary+=usrdict_fpath
 endif
 
-" Trim trailing whitespace: https://vi.stackexchange.com/a/456
+" Trim trailing whitespace
+" https://vi.stackexchange.com/a/456
 fun! TrimWhitespace()
     let l:save = winsaveview()
     %s/\s\+$//e
