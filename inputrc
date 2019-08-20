@@ -1,0 +1,3 @@
+set colored-completion-prefix On
+set colored-stats On
+set completion-ignore-case On
