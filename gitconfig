@@ -27,3 +27,6 @@
 
 [commit]
 	verbose = true
+
+[diff]
+	tool = vimdiff
