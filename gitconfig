@@ -18,10 +18,12 @@
 
 [push]
 	default = simple
+
 [core]
 	editor = vim
-	compression = 0
+
 [credential]
 	helper = cache
+
 [commit]
 	verbose = true
