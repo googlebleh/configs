@@ -10,7 +10,6 @@ alias sl='ls'
 alias grep='grep -n --color'
 alias diff='diff -u --color'
 alias xopen=xdg-open
-alias tmux='TERM=xterm-256color tmux'
 eval "$(thefuck --alias fk)"
 
 alias rt-private='rtorrent -n -o import=~/.rt-private.rc'
