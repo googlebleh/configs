@@ -12,9 +12,9 @@ let fzf_hook = 'yes | ./install --no-fish'
 " Plug 'chriskempson/base16-vim'
 Plug 'nanotech/jellybeans.vim'
 " Plug 'tomasr/molokai'
+Plug 'vim-airline/vim-airline-themes'
 
 " light plugins
-Plug 'bling/vim-airline'
 Plug 'bronson/vim-visual-star-search'
 Plug 'godlygeek/tabular'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -23,6 +23,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " medium plugins
