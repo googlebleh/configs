@@ -10,7 +10,6 @@ if [ ! -d "${configs_root}" ]; then
   exit 1
 fi
 
-ln -s "${configs_root}/Xresources" ~/.Xresources
 ln -s "${configs_root}/gitconfig" ~/.gitconfig
 ln -s "${configs_root}/inputrc" ~/.inputrc
 ln -s "${configs_root}/tmux.conf" ~/.tmux.conf
