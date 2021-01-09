@@ -1,9 +1,6 @@
-CanonicalizeHostname yes
-CanonicalDomains attlocal.net
-
 # Match originalhost paslpi exec 'getssid | grep -q "Really Fast WiFi"'
 #     HostName paslpi.attlocal.net
-
+#
 # Match originalhost paslpi exec "[ x$(/sbin/iwgetid --scheme) = xhodu ]"
 #     HostName paslpi.local
 #
@@ -13,10 +10,9 @@ CanonicalDomains attlocal.net
 # Match originalhost paslpi exec "[[ x$(/sbin/iwgetid --scheme) = xMiramonteHouse* ]]"
 #     # HostName paslpi.hsd1.ca.comcast.net
 #     HostName 10.0.0.108
+#
+# Match originalhost paslpi exec "[[ x$(/sbin/iwgetid --scheme) = xGreenfieldDrive* ]]"
+#     HostName paslpi.san.rr.com
 
 Host paslpi
     User pi
-
-# Host paslpi
-#     User pi
-#     HostName paslpi.local
