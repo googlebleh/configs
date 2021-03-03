@@ -72,12 +72,15 @@ autocmd BufRead,BufNewFile *.sig set filetype=sml
 
 set backspace=indent,eol,start " bksp over everything in insert mode
 set hidden
-set history=1000
+set history=10000
 set incsearch
 set keywordprg=:Man
 set noesckeys " https://stackoverflow.com/a/2158610/6466133
-set tags=tags;/ " search parent dirs for ctags file
+set splitright
+set tags+=tags;/ " search parent dirs for ctags file
 set wildmenu
+
+set omnifunc=syntaxcomplete#Complete
 
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
