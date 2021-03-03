@@ -28,9 +28,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 " medium plugins
 Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
-
-" heavy plugins
-Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Airline
@@ -63,17 +60,13 @@ set smartcase
 set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" place after character limit
-" set background=dark
-
 set spelllang=en_us
-" place after setting background
 highlight SpellBad cterm=underline ctermbg=0
 highlight SpellCap cterm=underline ctermbg=0
 highlight SpellLocal cterm=underline ctermbg=0
 
 " Signature files for SML
-au BufRead,BufNewFile *.sig setlocal filetype=sml
+autocmd BufRead,BufNewFile *.sig set filetype=sml
 
 " Controls ==========================================================
 
@@ -86,8 +79,8 @@ set noesckeys " https://stackoverflow.com/a/2158610/6466133
 set tags=tags;/ " search parent dirs for ctags file
 set wildmenu
 
+" Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
-  " Delete comment character when joining commented lines
   set formatoptions+=j
 endif
 
@@ -98,11 +91,10 @@ if filereadable(usrdict_fpath)
   set dictionary+=usrdict_fpath
 endif
 
-" Trim trailing whitespace
-" https://vi.stackexchange.com/a/456
-fun! TrimWhitespace()
+" Trim trailing whitespace: https://vi.stackexchange.com/a/456
+function! TrimWhitespace()
     let l:save = winsaveview()
     %s/\s\+$//e
     call winrestview(l:save)
-endfun
+endfunction
 command! TrimWhitespace call TrimWhitespace()
