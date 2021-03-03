@@ -13,6 +13,7 @@ let fzf_hook = 'yes | ./install --no-fish'
 Plug 'nanotech/jellybeans.vim'
 " Plug 'tomasr/molokai'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 
 " light plugins
 Plug 'bronson/vim-visual-star-search'
@@ -67,6 +68,7 @@ highlight SpellLocal cterm=underline ctermbg=0
 
 " Signature files for SML
 autocmd BufRead,BufNewFile *.sig set filetype=sml
+autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 
 " Controls ==========================================================
 
