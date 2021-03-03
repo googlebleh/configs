@@ -1,3 +1,9 @@
 set colored-completion-prefix On
-set colored-stats On
+# this blinks an annoying color when completing something that isn't a file
+# set colored-stats On
 set completion-ignore-case On
+set menu-complete-display-prefix On
+set show-all-if-ambiguous On
+
+TAB: menu-complete
+"\e[Z": menu-complete-backward
