@@ -73,6 +73,7 @@ autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 " Controls ==========================================================
 
 set backspace=indent,eol,start " bksp over everything in insert mode
+" set grepprg = 'grep -n --exclude=tags $* /dev/null'
 set hidden
 set history=10000
 set incsearch
