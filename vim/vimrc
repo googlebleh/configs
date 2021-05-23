@@ -8,12 +8,15 @@ runtime ftplugin/man.vim
 call plug#begin('~/.vim/plugged')
 let fzf_hook = 'yes | ./install --no-fish'
 
-" colorschemes
+" colors
 " Plug 'chriskempson/base16-vim'
-Plug 'nanotech/jellybeans.vim'
 " Plug 'tomasr/molokai'
+Plug 'chunkhang/vim-mbsync'
+Plug 'eiginn/iptables-vim'
+Plug 'nanotech/jellybeans.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
+Plug 'zh4ui/vim-rfc-reader'
 
 " light plugins
 Plug 'bronson/vim-visual-star-search'
