@@ -23,6 +23,7 @@ Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'bronson/vim-visual-star-search'
 Plug 'godlygeek/tabular'
 Plug 'googlebleh/lbdbq', { 'for': 'mail' }
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
@@ -43,6 +44,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:startify_change_to_dir = 0
 let g:startify_files_number = 20
 let g:startify_relative_path = 1
+
+let g:Todo_fold_char='x'
+let g:Todo_txt_do_not_map = 1
 
 " Appearance ========================================================
 
