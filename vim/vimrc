@@ -19,8 +19,10 @@ Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 Plug 'zh4ui/vim-rfc-reader'
 
 " light plugins
+Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'bronson/vim-visual-star-search'
 Plug 'godlygeek/tabular'
+Plug 'googlebleh/lbdbq', { 'for': 'mail' }
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
