@@ -17,7 +17,7 @@ bash_ps1_color ()
     local WHITE="\[\033[1;37m\]"
     local RESTORE="\[\033[0m\]"
 
-    local branch branch_s="" rv_s=""
+    local branch_s="" rv_s=""
     local date_s
     
     date_s="$(date +%H:%M:%S)"
@@ -26,8 +26,7 @@ bash_ps1_color ()
         rv_s="$rv "
     fi
     if which git &>/dev/null; then
-	branch="$(git branch 2>/dev/null | grep \* | cut -d " " -f 2)"
-	branch_s="$branch"
+	branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
     fi
 
     PS1="\n$GREEN\u@\h$RESTORE $date_s $CYAN\w$RESTORE $LIGHT_PURPLE$branch_s$RESTORE"
