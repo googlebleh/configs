@@ -6,6 +6,7 @@ endif
 runtime ftplugin/man.vim
 
 call plug#begin('~/.vim/plugged')
+
 let fzf_hook = 'yes | ./install --no-fish'
 
 " colors
@@ -21,7 +22,7 @@ Plug 'zh4ui/vim-rfc-reader'
 " light plugins
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'bronson/vim-visual-star-search'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'googlebleh/lbdbq', { 'for': 'mail' }
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim.git'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
@@ -35,17 +36,13 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 " medium plugins
 Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
+
 call plug#end()
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 
-" Startify
-let g:startify_change_to_dir = 0
-let g:startify_files_number = 20
-let g:startify_relative_path = 1
-
-let g:Todo_fold_char='x'
+let g:Todo_fold_char = 'x'
 let g:Todo_txt_do_not_map = 1
 
 " Appearance ========================================================
@@ -81,7 +78,7 @@ autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 
 " Controls ==========================================================
 
-set backspace=indent,eol,start " bksp over everything in insert mode
+set backspace=indent,eol,start " backspace over everything in insert mode
 " set grepprg = 'grep -n --exclude=tags $* /dev/null'
 set hidden
 set history=10000
@@ -108,8 +105,8 @@ endif
 
 " Trim trailing whitespace: https://vi.stackexchange.com/a/456
 function! TrimWhitespace()
-    let l:save = winsaveview()
-    %s/\s\+$//e
-    call winrestview(l:save)
+  let l:save = winsaveview()
+  %s/\s\+$//e
+  call winrestview(l:save)
 endfunction
 command! TrimWhitespace call TrimWhitespace()
