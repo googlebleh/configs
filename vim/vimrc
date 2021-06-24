@@ -84,10 +84,14 @@ set hidden
 set history=10000
 set incsearch
 set keywordprg=:Man
-set noesckeys " https://stackoverflow.com/a/2158610/6466133
 set splitright
 set tags+=tags;/ " search parent dirs for ctags file
 set wildmenu
+
+if !has('nvim')
+  " https://stackoverflow.com/a/2158610/6466133
+  set noesckeys
+endif
 
 set omnifunc=syntaxcomplete#Complete
 
