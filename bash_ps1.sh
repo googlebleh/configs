@@ -17,19 +17,27 @@ bash_ps1_color ()
     local WHITE="\[\033[1;37m\]"
     local RESTORE="\[\033[0m\]"
 
-    local branch_s="" rv_s=""
     local date_s
-    
+    local branch_s="" rv_s=""
+    local venv_s venv_line=""
+
+    PS1=""
+
     date_s="$(date +%H:%M:%S)"
 
     if [[ $rv != 0 ]]; then
         rv_s="$rv "
     fi
     if which git &>/dev/null; then
-	branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+        branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+    fi
+    if [ -n "$VIRTUAL_ENV" ]; then
+        venv_s="$(basename $VIRTUAL_ENV)"
+        venv_line="\n($venv_s)"
     fi
 
-    PS1="\n$GREEN\u@\h$RESTORE $date_s $CYAN\w$RESTORE $LIGHT_PURPLE$branch_s$RESTORE"
+    PS1+="\n$GREEN\u@\h$RESTORE $date_s $CYAN\w$RESTORE $LIGHT_PURPLE$branch_s$RESTORE"
+    PS1+="$venv_line"
     PS1+="\n$LIGHT_RED$rv_s$RESTORE\$ "
     export PS1
 }
