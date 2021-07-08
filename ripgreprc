@@ -1,0 +1,3 @@
+--no-ignore
+--colors=path:style:bold
+--glob=!tags
