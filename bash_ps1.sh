@@ -1,3 +1,32 @@
+get_git_head_failfast ()
+{
+    local branch_s=""
+    local detached_head exit_status
+
+    if ! which git &>/dev/null; then
+        echo "$branch_s"
+        return 0
+    fi
+
+    branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+    if [ "$branch_s" != "HEAD" ]; then
+        echo "$branch_s"
+        return 0
+    fi
+
+    # might be a detached head, try again
+    # branch_s="$(git show -s --pretty='%D' HEAD | sed 's/^.\+\?, //')"
+    detached_head="$(timeout 0.6 git name-rev --name-only HEAD)"
+    exit_status="$?"
+    if [ "$exit_status" -eq "124" ] || [ "$exit_status" -eq "137" ]; then
+        # don't wait too long
+        echo "$branch_s"
+    else
+        echo "$detached_head"
+    fi
+    return 0
+}
+
 bash_ps1_color ()
 {
     local rv="$?"
@@ -28,9 +57,9 @@ bash_ps1_color ()
     if [[ $rv != 0 ]]; then
         rv_s="$rv "
     fi
-    if which git &>/dev/null; then
-        branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
-    fi
+
+    branch_s="$(get_git_head_failfast)"
+
     if [ -n "$VIRTUAL_ENV" ]; then
         venv_s="$(basename $VIRTUAL_ENV)"
         venv_line="\n($venv_s)"
