@@ -35,7 +35,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " medium plugins
 Plug 'junegunn/fzf.vim'
-"   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
 
 call plug#end()
 
