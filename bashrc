@@ -2,6 +2,7 @@ HISTCONTROL=ignoreboth
 # ~1 yr 5mo on a laptop
 HISTSIZE=$((100 * 1000))
 HISTTIMEFORMAT="%s;"
+shopt -s histappend
 
 if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs

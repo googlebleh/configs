@@ -30,6 +30,7 @@ get_git_head_failfast ()
 bash_ps1_color ()
 {
     local rv="$?"
+    history -a
 
     local GREEN="\[\033[0;32m\]"
     local CYAN="\[\033[0;36m\]"
