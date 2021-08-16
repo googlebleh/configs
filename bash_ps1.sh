@@ -8,7 +8,7 @@ get_git_head_failfast ()
         return 0
     fi
 
-    branch_s="$(git rev-parse --abbrev-ref HEAD 2>/dev/null)"
+    branch_s="$(timeout 0.2 git rev-parse --abbrev-ref HEAD 2>/dev/null)"
     if [ "$branch_s" != "HEAD" ]; then
         echo "$branch_s"
         return 0
