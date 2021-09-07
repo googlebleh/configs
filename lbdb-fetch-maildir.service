@@ -1,0 +1,6 @@
+[Unit]
+Description=Update lbdb from Maildir
+
+[Service]
+Type=simple
+ExecStart=%h/.neomutt/bin/lbdb-fetch-maildir.sh "%h/.mail"
