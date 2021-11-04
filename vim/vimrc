@@ -12,12 +12,16 @@ let fzf_hook = 'yes | ./install --no-fish'
 " colors
 " Plug 'chriskempson/base16-vim'
 " Plug 'tomasr/molokai'
+Plug 'cespare/vim-toml'
 Plug 'chunkhang/vim-mbsync', { 'for': 'mbsync' }
 Plug 'eiginn/iptables-vim', { 'for': 'iptables' }
 Plug 'nanotech/jellybeans.vim'
+Plug 'sirtaj/vim-openscad', { 'for': 'scad' }
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
-Plug 'zh4ui/vim-rfc-reader'
+if has('lambda')
+  Plug 'zh4ui/vim-rfc-reader'
+endif
 
 " light plugins
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
