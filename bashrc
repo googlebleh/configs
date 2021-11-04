@@ -4,6 +4,8 @@ HISTSIZE=$((100 * 1000))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
 
+export MANPAGER="less -R --use-color -Dd+c -Du+m"
+
 if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
@@ -12,3 +14,4 @@ fi
 
 alias sl=ls
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
+alias grep="grep --color"
