@@ -16,7 +16,7 @@ get_git_head_failfast ()
 
     # might be a detached head, try again
     # branch_s="$(git show -s --pretty='%D' HEAD | sed 's/^.\+\?, //')"
-    detached_head="$(timeout 0.6 git name-rev --name-only HEAD)"
+    detached_head="$(timeout 0.6 git name-rev --name-only HEAD 2>/dev/null)"
     exit_status="$?"
     if [ "$exit_status" -eq "124" ] || [ "$exit_status" -eq "137" ]; then
         # don't wait too long
