@@ -55,6 +55,7 @@ if has('syntax') && !exists('g:syntax_on')
   syntax enable
 endif
 
+set t_Co=256 " to run inside docker
 colorscheme jellybeans
 
 set cursorline
