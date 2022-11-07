@@ -120,3 +120,8 @@ function! TrimWhitespace()
   call winrestview(l:save)
 endfunction
 command! TrimWhitespace call TrimWhitespace()
+
+function! PutDate()
+  put =strftime('%F')
+endfunction
+command! PutDate call PutDate()
