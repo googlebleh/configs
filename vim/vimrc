@@ -12,7 +12,7 @@ let fzf_hook = 'yes | ./install --no-fish'
 " colors
 " Plug 'chriskempson/base16-vim'
 " Plug 'tomasr/molokai'
-Plug 'cespare/vim-toml'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chunkhang/vim-mbsync', { 'for': 'mbsync' }
 Plug 'eiginn/iptables-vim', { 'for': 'iptables' }
 Plug 'nanotech/jellybeans.vim'
