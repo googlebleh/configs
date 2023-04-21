@@ -17,7 +17,6 @@ Plug 'chunkhang/vim-mbsync', { 'for': 'mbsync' }
 Plug 'eiginn/iptables-vim', { 'for': 'iptables' }
 Plug 'nanotech/jellybeans.vim'
 Plug 'sirtaj/vim-openscad', { 'for': 'scad' }
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 if has('lambda')
   Plug 'zh4ui/vim-rfc-reader'
@@ -34,7 +33,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " medium plugins
@@ -42,9 +40,6 @@ Plug 'junegunn/fzf.vim'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
 
 call plug#end()
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1
 
 let g:Todo_fold_char = 'x'
 let g:Todo_txt_do_not_map = 1
@@ -67,6 +62,8 @@ set number relativenumber " hybrid line numbers
 set ruler
 set showcmd
 set smartcase
+
+highlight StatusLine ctermbg=darkgray ctermfg=white
 
 " 78 char limit
 set colorcolumn=79
