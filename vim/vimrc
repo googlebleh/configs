@@ -60,6 +60,7 @@ set nolist wrap linebreak breakat&vim " line wrap between words
 set nowrap
 set number relativenumber " hybrid line numbers
 set ruler
+set shortmess-=S
 set showcmd
 set smartcase
 
