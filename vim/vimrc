@@ -63,8 +63,6 @@ set ruler
 set showcmd
 set smartcase
 
-highlight StatusLine ctermbg=darkgray ctermfg=white
-
 " 78 char limit
 set colorcolumn=79
 highlight ColorColumn ctermbg=0 guibg=lightgrey
