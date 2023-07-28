@@ -6,6 +6,10 @@ shopt -s histappend
 
 export MANPAGER="less -R --use-color -Dd+c -Du+m"
 
+if [ -d $HOME/.local/bin ]; then
+    PATH="$PATH:$HOME/.local/bin"
+fi
+
 if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
     export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
