@@ -17,6 +17,8 @@
 
 	depth = rev-parse --show-toplevel
 
+	fetchref = "!f() { git fetch origin \"$1:refs/remotes/origin/$1\"; }; f"
+
 [push]
 	default = simple
 
