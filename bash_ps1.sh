@@ -53,6 +53,11 @@ bash_ps1_color ()
 
     PS1=""
 
+    netns_s="$(ip netns identify $$ | head -c -1)"
+    if [ 1 -lt "$(wc -c <<< "$netns_s")" ]; then
+        netns_s="$RED[$netns_s]$RESTORE"
+    fi
+
     date_s="$(date +%H:%M:%S)"
 
     if [[ $rv != 0 ]]; then
@@ -66,7 +71,7 @@ bash_ps1_color ()
         venv_line="\n($venv_s)"
     fi
 
-    PS1+="\n$GREEN\u@\h$RESTORE $date_s $CYAN\w$RESTORE $LIGHT_PURPLE$branch_s$RESTORE"
+    PS1+="\n$GREEN\u@\h$RESTORE$netns_s $date_s $CYAN\w$RESTORE $LIGHT_PURPLE$branch_s$RESTORE"
     PS1+="$venv_line"
     PS1+="\n$LIGHT_RED$rv_s$RESTORE\$ "
     export PS1
