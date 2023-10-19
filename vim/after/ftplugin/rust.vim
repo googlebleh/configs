@@ -1,1 +1,1 @@
-setlocal makeprg=cargo\ run
+setlocal makeprg=cargo\ check
