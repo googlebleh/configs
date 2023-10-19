@@ -19,3 +19,9 @@ fi
 alias sl=ls
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
 alias grep="grep --color"
+
+rm_fast ()
+{
+	mv "$1" "$1.tmp"
+	rm -rf "$1.tmp" &
+}
