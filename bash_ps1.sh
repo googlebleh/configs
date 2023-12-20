@@ -53,9 +53,12 @@ bash_ps1_color ()
 
     PS1=""
 
-    netns_s="$(ip netns identify $$ | head -c -1)"
-    if [ 1 -lt "$(wc -c <<< "$netns_s")" ]; then
-        netns_s="$RED[$netns_s]$RESTORE"
+    netns_s=""
+    if which ip > /dev/null; then
+        netns_s="$(ip netns identify $$ | head -c -1)"
+        if [ ${#netns_s} -ge 1 ]; then
+            netns_s="$RED[$netns_s]$RESTORE"
+        fi
     fi
 
     date_s="$(date +%H:%M:%S)"
