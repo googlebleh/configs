@@ -1,8 +1,8 @@
 [[ $- != *i* ]] && return
 
 HISTCONTROL=ignoreboth
-# ~1 yr 5mo on a laptop
-HISTSIZE=$((100 * 1000))
+# ~1 yr 5mo on a laptop, times 10
+HISTSIZE=$((10 ** 6))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
 
