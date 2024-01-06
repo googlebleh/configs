@@ -1,3 +1,5 @@
+[[ $- != *i* ]] && return
+
 HISTCONTROL=ignoreboth
 # ~1 yr 5mo on a laptop
 HISTSIZE=$((100 * 1000))
@@ -16,9 +18,10 @@ if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
     source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
-alias sl=ls
-alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
 alias grep="grep --color"
+alias ls="ls --color"
+alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
+alias sl=ls
 
 rm_fast ()
 {
