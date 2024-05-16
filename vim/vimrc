@@ -56,6 +56,12 @@ let g:markdown_fenced_languages = [
       \ 'python'
       \]
 
+" fixup artifacts on load when running in tmux
+" https://vi.stackexchange.com/a/247
+if &term =~ '256color'
+  " disable Background Color Erase
+  set t_ut=
+endif
 set t_Co=256 " to run inside docker
 colorscheme jellybeans
 
