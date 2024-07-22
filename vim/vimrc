@@ -20,7 +20,7 @@ Plug 'sirtaj/vim-openscad', { 'for': 'scad' }
 Plug 'vim-scripts/confluencewiki.vim', { 'for': 'confluencewiki' }
 Plug 'zah/nim.vim', { 'for': 'nim' }
 if has('lambda')
-  Plug 'zh4ui/vim-rfc-reader'
+  Plug 'git@github.com:googlebleh/vim-rfc-reader.git'
 endif
 
 " light plugins
@@ -33,7 +33,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " medium plugins
