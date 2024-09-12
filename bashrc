@@ -6,7 +6,7 @@ HISTSIZE=$((10 ** 6))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
 
-export MANPAGER="less -R --use-color -Dd+c -Du+m"
+# export MANPAGER="less -R --use-color -Dd+c -Du+m"
 
 if [ -d $HOME/.local/bin ]; then
     PATH="$PATH:$HOME/.local/bin"
