@@ -1,16 +1,23 @@
+if [ -d $HOME/.local/bin ]; then
+    PATH="$PATH:$HOME/.local/bin"
+fi
+
+rm_fast ()
+{
+	mv "$1" "$1.tmp"
+	rm -rf "$1.tmp" &
+}
+
+
+# interactive-only shell config below
 [[ $- != *i* ]] && return
+
 
 HISTCONTROL=ignoreboth
 # ~1 yr 5mo on a laptop, times 10
 HISTSIZE=$((10 ** 6))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
-
-# export MANPAGER="less -R --use-color -Dd+c -Du+m"
-
-if [ -d $HOME/.local/bin ]; then
-    PATH="$PATH:$HOME/.local/bin"
-fi
 
 if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
     export WORKON_HOME=$HOME/.virtualenvs
@@ -22,9 +29,4 @@ alias grep="grep --color"
 alias ls="ls --color"
 alias rg="RIPGREP_CONFIG_PATH=$HOME/.ripgreprc rg"
 alias sl=ls
-
-rm_fast ()
-{
-	mv "$1" "$1.tmp"
-	rm -rf "$1.tmp" &
-}
+# export MANPAGER="less -R --use-color -Dd+c -Du+m"
