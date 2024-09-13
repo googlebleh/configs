@@ -19,10 +19,28 @@ HISTSIZE=$((10 ** 6))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
 
-if [ -f /usr/bin/virtualenvwrapper_lazy.sh ]; then
+source_one ()
+{
+    for fpath in "$@"; do
+	if [ ! -f "$fpath" ]; then
+	    continue
+	fi
+	if source "$fpath"; then
+	    return "$?"
+	fi
+    done
+    return 1
+}
+
+if command -v fzf &> /dev/null; then
+    # Arch (first below) and Ubuntu install these to different paths
+    source_one /usr/share/fzf/completion.bash /usr/share/doc/fzf/examples/completion.bash
+    source_one /usr/share/fzf/key-bindings.bash /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
+if source_one /usr/bin/virtualenvwrapper_lazy.sh; then
     export WORKON_HOME=$HOME/.virtualenvs
     export VIRTUALENVWRAPPER_SCRIPT=/usr/bin/virtualenvwrapper.sh
-    source /usr/bin/virtualenvwrapper_lazy.sh
 fi
 
 alias grep="grep --color"
