@@ -69,7 +69,10 @@ bash_ps1_color ()
 
     branch_s="$(get_git_head_failfast)"
 
-    if [ -n "$VIRTUAL_ENV" ]; then
+    if [ -n "$CONDA_DEFAULT_ENV" ]; then
+        venv_s="$(basename $CONDA_DEFAULT_ENV)"
+        venv_line="\n($venv_s)"
+    elif [ -n "$VIRTUAL_ENV" ]; then
         venv_s="$(basename $VIRTUAL_ENV)"
         venv_line="\n($venv_s)"
     fi
