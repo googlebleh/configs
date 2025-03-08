@@ -13,9 +13,10 @@ rm_fast ()
 [[ $- != *i* ]] && return
 
 
+# unlimited history file
+HISTSIZE=
+HISTFILESIZE=
 HISTCONTROL=ignoreboth
-# ~1 yr 5mo on a laptop, times 10
-HISTSIZE=$((10 ** 6))
 HISTTIMEFORMAT="%s;"
 shopt -s histappend
 
