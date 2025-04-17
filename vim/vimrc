@@ -66,7 +66,6 @@ colorscheme jellybeans
 
 set cursorline
 set hlsearch
-set ignorecase
 set nolist wrap linebreak breakat&vim " line wrap between words
 set nowrap
 set number relativenumber " hybrid line numbers
@@ -92,11 +91,12 @@ autocmd BufRead,BufNewFile *.iptables set filetype=iptables
 " Controls ==========================================================
 
 set backspace=indent,eol,start " backspace over everything in insert mode
-set grepprg=grep\ -n\ --exclude=tags\ $*\ /dev/null
+set grepprg=grep\ -n\ --exclude-dir=.git\ --exclude=tags\ $*\ /dev/null
 set hidden
 set history=10000
 set incsearch
 set keywordprg=:Man
+set omnifunc=syntaxcomplete#Complete
 set splitright
 set tags+=tags;/ " search parent dirs for ctags file
 set wildmenu
@@ -105,8 +105,6 @@ if !has('nvim')
   " https://stackoverflow.com/a/2158610/6466133
   set noesckeys
 endif
-
-set omnifunc=syntaxcomplete#Complete
 
 " Delete comment character when joining commented lines
 if v:version > 703 || v:version == 703 && has("patch541")
