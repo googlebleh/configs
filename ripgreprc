@@ -1,3 +1,4 @@
 --no-ignore
+--hidden
 --colors=path:style:bold
 --glob=!tags
