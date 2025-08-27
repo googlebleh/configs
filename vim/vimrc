@@ -60,6 +60,7 @@ call plug#end()
 
 let g:Todo_fold_char = 'x'
 let g:Todo_txt_do_not_map = 1
+autocmd filetype todo setlocal omnifunc=todo#Complete
 
 " " ripgrep in AP repo
 " function! tesla#ap#ripgrep(pattern)
