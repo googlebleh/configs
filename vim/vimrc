@@ -100,7 +100,11 @@ set splitright
 set tags+=tags;/ " search parent dirs for ctags file
 set wildmenu
 
-if !has('nvim')
+if has('nvim')
+  " set to default: nvim changes this when ripgrep is detected
+  set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m
+  set mouse=
+else
   " https://stackoverflow.com/a/2158610/6466133
   set noesckeys
 endif
