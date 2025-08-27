@@ -36,10 +36,55 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'junegunn/fzf.vim'
   " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
 
+" heavy plugins
+" Plug 'github/copilot.vim'
+"" for CopilotChat
+" Plug 'ibhagwan/fzf-lua'
+" Plug 'CopilotC-Nvim/CopilotChat.nvim'
+"" for avante
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'HakonHarnes/img-clip.nvim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'stevearc/dressing.nvim' " for enhanced input UI
+Plug 'folke/snacks.nvim' " for modern input UI
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
+" autocmd! User avante.nvim lua << EOF
+" EOF
+
 call plug#end()
 
 let g:Todo_fold_char = 'x'
 let g:Todo_txt_do_not_map = 1
+
+if has('nvim')
+lua << EOF
+
+--   require('fzf-lua').register_ui_select()
+--   require("CopilotChat").setup { model = "claude-3.7-sonnet" }
+
+  require('avante').setup({
+    provider = 'copilot',
+    auto_suggestions_provider = 'claude',
+      providers = {
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-sonnet-4",
+          extra_request_body = {
+            temperature = 0.75,
+            max_tokens = 4096,
+          },
+        },
+      },
+  })
+  -- views can only be fully collapsed with the global statusline
+  vim.opt.laststatus = 3
+
+EOF
+endif
 
 " Appearance ========================================================
 
