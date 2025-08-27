@@ -3,7 +3,6 @@
 if has('autocmd')
   filetype plugin indent on
 endif
-runtime ftplugin/man.vim
 
 call plug#begin('~/.vim/plugged')
 
@@ -74,19 +73,19 @@ set ruler
 set shortmess-=S
 set showcmd
 
-" 78 char limit
-set colorcolumn=79
-highlight ColorColumn ctermbg=0 guibg=lightgrey
+set colorcolumn=78
+highlight ColorColumn ctermbg=0 guibg=black
 
 set spelllang=en_us
 highlight SpellBad cterm=underline ctermbg=0
 highlight SpellCap cterm=underline ctermbg=0
 highlight SpellLocal cterm=underline ctermbg=0
 
-" Signature files for SML
-autocmd BufRead,BufNewFile *.sig set filetype=sml
 autocmd BufRead,BufNewFile *.confluencewiki set filetype=confluencewiki
 autocmd BufRead,BufNewFile *.iptables set filetype=iptables
+" Signature files for SML
+autocmd BufRead,BufNewFile *.sig set filetype=sml
+autocmd BufRead,BufNewFile todo-*.txt set filetype=todo
 
 " Controls ==========================================================
 
