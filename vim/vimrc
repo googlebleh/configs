@@ -33,6 +33,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " medium plugins
+" Plug 'googlebleh/vim-ripgrep', { 'branch': 'cwee/fzf_name_collision' }
 Plug 'junegunn/fzf.vim'
   " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': fzf_hook }
 
@@ -59,6 +60,15 @@ call plug#end()
 
 let g:Todo_fold_char = 'x'
 let g:Todo_txt_do_not_map = 1
+
+" " ripgrep in AP repo
+" function! tesla#ap#ripgrep(pattern)
+"   let l:rg_command_old = g:rg_command
+"   let g:rg_command += ' -g*.cpp -g!{legacy_platforms,test,platform_specific,component_specific,tools}'
+"   Ripgrep g:rg_command, a:pattern
+"   let g:rg_command = l:rg_command_old
+" endfunction
+" command! APRipgrep call tesla#ap#ripgrep(<q-args>)
 
 if has('nvim')
 lua << EOF
