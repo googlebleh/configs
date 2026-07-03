@@ -1,10 +1,79 @@
-get_git_head_failfast ()
+bash_ps1_allow_repo ()
+{
+    local allowfile="${XDG_CONFIG_HOME:-$HOME/.config}/bash_ps1_git_allowlist"
+
+    abspath="$(realpath -- "$PWD" 2>/dev/null)" || return 1
+    relpath="$(realpath --relative-to "$HOME" "$PWD" 2>/dev/null)" || return 1
+    [ "$abspath" -ef "$HOME/$relpath" ] || return 1
+
+    if ! command -v git 2>&1 >/dev/null || ! command -v timeout 2>&1 >/dev/null; then
+        echo "missing dependencies"
+        return 1
+    fi
+
+    if _git_repo_allowed; then
+        return 0
+    fi
+
+    if [[ "$abspath" == "$HOME"* ]]; then
+        echo "~/$relpath" >> "$allowfile"
+    else
+        echo "$abspath" >> "$allowfile"
+    fi
+}
+
+_git_repo_allowed ()
+{
+    local allowfile="${XDG_CONFIG_HOME:-$HOME/.config}/bash_ps1_git_allowlist"
+    local here
+
+    here="$(realpath -- "$PWD" 2>/dev/null)" || return 1
+    _git_repo_allowed_scan "$allowfile" "$here" 0
+}
+
+# Scan an allowlist file for a prefix matching $here
+#   - a leading ~/ is expanded
+#   - blank lines and # comments are ignored
+#   - "#include <path>" resolves relative to the including file's directory
+_git_repo_allowed_scan ()
+{
+    local file="$1" here="$2" depth="$3"
+    local line prefix incfile
+
+    [ "$depth" -gt 16 ] && return 1
+    [ -r "$file" ] || return 1
+    while IFS= read -r line || [ -n "$line" ]; do
+        case "$line" in
+            '#include'[[:space:]]*)
+                incfile="${line#\#include}"
+                incfile="${incfile#"${incfile%%[![:space:]]*}"}"  # ltrim
+                case "$incfile" in
+                    '~/'*) incfile="$HOME/${incfile#\~/}" ;;
+                esac
+                case "$incfile" in
+                    /*) ;;
+                    *) incfile="$(dirname -- "$file")/$incfile" ;;
+                esac
+                _git_repo_allowed_scan "$incfile" "$here" "$((depth + 1))" && return 0
+                continue
+                ;;
+            ''|'#'*) continue ;;
+            '~/'*) line="$HOME/${line#\~/}" ;;
+        esac
+        prefix="$(realpath -- "$line" 2>/dev/null)" || continue
+        if [ "$here" = "$prefix" ] || [ "${here#"$prefix"/}" != "$here" ]; then
+            return 0
+        fi
+    done < "$file"
+    return 1
+}
+
+_get_git_head_failfast ()
 {
     local branch_s=""
     local detached_head exit_status
 
-    if ! which git &>/dev/null; then
-        echo "$branch_s"
+    if ! _git_repo_allowed; then
         return 0
     fi
 
@@ -67,7 +136,7 @@ bash_ps1_color ()
         rv_s="$rv "
     fi
 
-    branch_s="$(get_git_head_failfast)"
+    branch_s="$(_get_git_head_failfast)"
 
     if [ -n "$CONDA_DEFAULT_ENV" ]; then
         venv_s="$(basename $CONDA_DEFAULT_ENV)"
