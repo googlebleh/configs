@@ -1,17 +1,43 @@
+# Find the repository toplevel without invoking git: walk up from $PWD
+# until a directory contains a .git entry (a directory, or a file for
+# worktrees and submodules). This mirrors git's own discovery, so no git
+# command runs in the repository before it is trusted.
+_git_find_toplevel ()
+{
+    local dir
+
+    dir="$(realpath -- "$PWD" 2>/dev/null)" || return 1
+    while :; do
+        if [ -e "$dir/.git" ]; then
+            printf '%s\n' "$dir"
+            return 0
+        fi
+        [ "$dir" = "/" ] && return 1
+        dir="${dir%/*}"
+        [ -n "$dir" ] || dir="/"
+    done
+}
+
 bash_ps1_allow_repo ()
 {
     local allowfile="${XDG_CONFIG_HOME:-$HOME/.config}/bash_ps1_git_allowlist"
-
-    abspath="$(realpath -- "$PWD" 2>/dev/null)" || return 1
-    relpath="$(realpath --relative-to "$HOME" "$PWD" 2>/dev/null)" || return 1
-    [ "$abspath" -ef "$HOME/$relpath" ] || return 1
+    local repotop abspath relpath
 
     if ! command -v git 2>&1 >/dev/null || ! command -v timeout 2>&1 >/dev/null; then
         echo "missing dependencies"
         return 1
     fi
 
-    if _git_repo_allowed; then
+    if ! repotop="$(_git_find_toplevel)"; then
+        echo "not inside a git repository"
+        return 1
+    fi
+
+    abspath="$(realpath -- "$repotop" 2>/dev/null)" || return 1
+    relpath="$(realpath --relative-to "$HOME" "$repotop" 2>/dev/null)" || return 1
+    [ "$abspath" -ef "$HOME/$relpath" ] || return 1
+
+    if _git_repo_allowed "$abspath"; then
         return 0
     fi
 
@@ -27,7 +53,7 @@ _git_repo_allowed ()
     local allowfile="${XDG_CONFIG_HOME:-$HOME/.config}/bash_ps1_git_allowlist"
     local here
 
-    here="$(realpath -- "$PWD" 2>/dev/null)" || return 1
+    here="$(realpath -- "${1:-$PWD}" 2>/dev/null)" || return 1
     _git_repo_allowed_scan "$allowfile" "$here" 0
 }
 
