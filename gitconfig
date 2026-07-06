@@ -17,14 +17,15 @@
 
 	depth = rev-parse --show-toplevel
 
-	fetchref = "!f() { git fetch origin \"$1:refs/remotes/origin/$1\"; }; f"
-	fetchout = "!f() { git fetch origin \"$1:refs/remotes/origin/$1\" && git checkout \"origin/$1\"; }; f"
+	fetchref = "!f() { git fetch -f origin \"$1:refs/remotes/origin/$1\"; }; f"
+	fetchout = "!f() { git fetch -f origin \"$1:refs/remotes/origin/$1\" && git checkout \"origin/$1\"; }; f"
 
 [push]
 	default = simple
 
 [core]
 	editor = vim
+	hooksPath = /dev/null
 
 [credential]
 	helper = cache
